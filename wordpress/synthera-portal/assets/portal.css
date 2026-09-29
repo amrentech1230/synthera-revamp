@@ -1,0 +1,72 @@
+/* Synthera Portal — minimal styling matching the dark teal cinematic look.
+   Override freely in your theme / Elementor custom CSS. */
+
+:root {
+	--synp-bg: #05201f;
+	--synp-panel: #0b2e2c;
+	--synp-teal: #17c3b2;
+	--synp-text: #e6f4f2;
+	--synp-muted: #9ec7c2;
+	--synp-border: rgba(23, 195, 178, 0.25);
+}
+
+.synp-portal {
+	display: grid;
+	grid-template-columns: 220px 1fr;
+	gap: 1.5rem;
+	color: var(--synp-text);
+}
+.synp-portal-nav ul { list-style: none; margin: 0; padding: 0; }
+.synp-portal-nav li { margin: 0 0 .25rem; }
+.synp-portal-nav a {
+	display: block; padding: .6rem .9rem; border-radius: 8px;
+	color: var(--synp-muted); text-decoration: none;
+}
+.synp-portal-nav li.active a,
+.synp-portal-nav a:hover { background: var(--synp-panel); color: var(--synp-text); }
+
+.synp-cards { display: flex; gap: 1rem; margin: 1rem 0; }
+.synp-card {
+	background: var(--synp-panel); border: 1px solid var(--synp-border);
+	border-radius: 12px; padding: 1rem 1.25rem; min-width: 140px;
+}
+.synp-card span { display: block; font-size: 2rem; font-weight: 700; color: var(--synp-teal); }
+
+.synp-product-grid, .synp-resource-grid {
+	display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem;
+}
+.synp-product-card, .synp-resource-card {
+	display: block; background: var(--synp-panel); border: 1px solid var(--synp-border);
+	border-radius: 12px; padding: 1rem; color: var(--synp-text); text-decoration: none;
+}
+.synp-product-card img, .synp-resource-card img { width: 100%; border-radius: 8px; margin-bottom: .5rem; }
+
+.synp-table { width: 100%; border-collapse: collapse; }
+.synp-table th, .synp-table td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--synp-border); }
+
+.synp-status { padding: .15rem .6rem; border-radius: 999px; font-size: .8rem; }
+.synp-status-pending { background: #4a3b00; color: #ffd666; }
+.synp-status-under_review { background: #14324a; color: #7cc4ff; }
+.synp-status-approved { background: #0d3d24; color: #6ee7a8; }
+.synp-status-completed { background: #123b33; color: var(--synp-teal); }
+.synp-status-rejected { background: #4a1414; color: #ff8f8f; }
+
+.synp-form { display: flex; flex-direction: column; gap: .75rem; max-width: 560px; }
+.synp-form label { display: flex; flex-direction: column; gap: .3rem; font-size: .9rem; }
+.synp-form input, .synp-form textarea, .synp-form select {
+	padding: .6rem .75rem; border-radius: 8px; border: 1px solid var(--synp-border);
+	background: var(--synp-panel); color: var(--synp-text);
+}
+.synp-form button, .synp-btn {
+	background: var(--synp-teal); color: #04201d; border: 0; border-radius: 8px;
+	padding: .7rem 1.25rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block;
+}
+.synp-filters { display: flex; gap: .5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.synp-notice { background: #0d3d24; color: #6ee7a8; padding: .75rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.synp-error { background: #4a1414; color: #ff8f8f; padding: .75rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.synp-auth { max-width: 420px; margin: 0 auto; }
+
+@media (max-width: 782px) {
+	.synp-portal { grid-template-columns: 1fr; }
+	.synp-portal-nav ul { display: flex; flex-wrap: wrap; gap: .25rem; }
+}
